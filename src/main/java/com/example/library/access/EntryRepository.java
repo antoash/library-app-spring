@@ -36,14 +36,14 @@ public class EntryRepository {
     // create
     public void create(EntryRecord entryRecord) {
         jdbcClient.sql("INSERT INTO Entries (studentId, name, branch, entryTime, exitTime, booksBorrowed) values (?,?,?,?,?,?) ")
-                .params(entryRecord.studentId(), entryRecord.name(), entryRecord.branch(), entryRecord.entryTime().toString(), entryRecord.exitTime().toString(), entryRecord.booksBorrowed())
+                .params(entryRecord.studentId(), entryRecord.name(), entryRecord.branch().toString(), entryRecord.entryTime(), entryRecord.exitTime(), entryRecord.booksBorrowed())
                 .update();
     }
 
     // update
     public void update(Integer studentId, EntryRecord entryRecord) {
         jdbcClient.sql("UPDATE Entries SET studentId=?, name=?, title=?, entryTime=?, exitTime=?, booksBorrowed=? where studentId=?")
-                .params(entryRecord.studentId(), entryRecord.name(), entryRecord.branch(), entryRecord.entryTime().toString(), entryRecord.exitTime().toString(), entryRecord.booksBorrowed(), studentId)
+                .params(entryRecord.studentId(), entryRecord.name(), entryRecord.branch().toString(), entryRecord.entryTime(), entryRecord.exitTime(), entryRecord.booksBorrowed(), studentId)
                 .update();
     }
 
