@@ -42,8 +42,8 @@ public class EntryRepository {
 
     // update
     public void update(Integer studentId, EntryRecord entryRecord) {
-        jdbcClient.sql("UPDATE Entries SET studentId=?, name=?, title=?, entryTime=?, exitTime=?, booksBorrowed=? where studentId=?")
-                .params(entryRecord.studentId(), entryRecord.name(), entryRecord.branch().toString(), entryRecord.entryTime(), entryRecord.exitTime(), entryRecord.booksBorrowed(), studentId)
+        jdbcClient.sql("UPDATE Entries SET name=?, branch=?, entryTime=?, exitTime=?, booksBorrowed=? where studentId=?")
+                .params(entryRecord.name(), entryRecord.branch().toString(), entryRecord.entryTime(), entryRecord.exitTime(), entryRecord.booksBorrowed(), studentId)
                 .update();
     }
 
