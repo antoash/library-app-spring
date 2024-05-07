@@ -18,7 +18,7 @@ public class EntryController {
     }
 
     // GET
-    @GetMapping("/{id}")
+    @GetMapping("/{studentId}")
     Optional<EntryRecord> findByID(@PathVariable Integer studentId) {
         return entryRepository.findByID(studentId);
     }
@@ -35,13 +35,13 @@ public class EntryController {
     }
 
     // PUT
-    @PutMapping("/update/{id}")
+    @PutMapping("/update/{studentId}")
     void update(@PathVariable Integer studentId, @RequestBody EntryRecord entryRecord) {
         entryRepository.update(studentId, entryRecord);
     }
 
     // DELETE
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("delete/{studentId}")
     void deleleById(@PathVariable Integer studentId) {
         entryRepository.deleteById(studentId);
     }
