@@ -1,0 +1,84 @@
+[
+    {
+      "studentId": 1,
+      "name": "Noon Run",
+      "branch": "Dallas",
+      "entryTime": "2024-02-20T06:05:00.000000",
+      "exitTime": "2024-02-20T10:27:00.000000",
+      "booksBorrowed": 3
+    },
+    {
+      "studentId": 2,
+      "name": "Afternoon Run",
+      "branch": "Galveston",
+      "entryTime": "2024-02-22T12:16:00.000000",
+      "exitTime": "2024-02-22T14:27:00.000000",
+      "booksBorrowed": 2
+
+    },
+    {
+      "studentId": 3,
+      "name": "Dawn Run",
+      "branch": "Waco",
+      "entryTime": "2024-03-06T19:47:00.000000",
+      "exitTime": "2024-03-06T22:06:00.000000",
+      "booksBorrowed": 2
+    },
+    {
+      "studentId": 4,
+      "name": "Sunset Jog",
+      "branch": "Dallas",
+      "entryTime": "2024-03-31T08:32:00.000000",
+      "exitTime": "2024-03-31T12:57:00.000000",
+      "booksBorrowed": 1
+    },
+    {
+      "studentId": 5,
+      "name": "Sunset Jog",
+      "branch": "Dallas",
+      "entryTime": "2024-03-01T03:49:00.000000",
+      "exitTime": "2024-03-01T05:58:00.000000",
+      "booksBorrowed": 1
+    },
+    {
+      "studentId": 6,
+      "name": "Noon Run",
+      "branch": "Houston",
+      "entryTime": "2024-03-02T21:02:00.000000",
+      "exitTime": "2024-03-03T00:36:00.000000",
+      "booksBorrowed": 3
+    },
+    {
+      "studentId": 7,
+      "name": "Sunset Jog",
+      "branch": "Galveston",
+      "entryTime": "2024-04-05T02:46:00.000000",
+      "exitTime": "2024-04-05T06:43:00.000000",
+      "booksBorrowed": 2
+    },
+    {
+      "studentId": 8,
+      "name": "Morning Run",
+      "branch": "Waco",
+      "entryTime": "2024-03-29T06:37:00.000000",
+      "exitTime": "2024-03-29T09:19:00.000000",
+      "booksBorrowed": 2
+    },
+    {
+      "studentId": 9,
+      "name": "Sunset Jog",
+      "branch": "Houston",
+      "entryTime": "2024-03-22T23:22:00.000000",
+      "exitTime": "2024-03-23T02:41:00.000000",
+      "booksBorrowed": 1
+    },
+    {
+      "studentId": 10,
+      "name": "Dawn Run",
+      "branch": "Galveston",
+      "entryTime": "2024-03-08T01:34:00.000000",
+      "exitTime": "2024-03-08T05:53:00.000000",
+      "booksBorrowed": 3
+    }
+
+]
