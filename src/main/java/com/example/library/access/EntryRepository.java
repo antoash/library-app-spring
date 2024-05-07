@@ -35,7 +35,7 @@ public class EntryRepository {
 
     // create
     public void create(EntryRecord entryRecord) {
-        jdbcClient.sql("INSERT INTO Entries (studentId, name, branch, entryTime, exitTime, booksBorrowed) values (?,?,?,?,?,?) ")
+        jdbcClient.sql("INSERT INTO Entries (studentId, name, branch, entryTime, exitTime, booksBorrowed) VALUES (?,?,?,?,?,?) ")
                 .params(entryRecord.studentId(), entryRecord.name(), entryRecord.branch().toString(), entryRecord.entryTime(), entryRecord.exitTime(), entryRecord.booksBorrowed())
                 .update();
     }

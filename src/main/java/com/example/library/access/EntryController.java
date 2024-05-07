@@ -11,9 +11,11 @@ import java.util.Optional;
 @RequestMapping("/ntlib/")
 public class EntryController {
 
-    private EntryRecord entryRecord;
     private EntryRepository entryRepository;
 
+    EntryController (EntryRepository entryRepository) {
+        this.entryRepository = entryRepository;
+    }
 
     // GET
     @GetMapping("/{id}")
