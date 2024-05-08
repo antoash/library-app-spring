@@ -2,6 +2,7 @@ package com.example.library.access;
 
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,28 +31,32 @@ public class EntryRepository {
         return jdbcClient.sql("SELECT * FROM Entries")
                 .query(EntryRecord.class)
                 .list();
-
     }
 
     // create
     public void create(EntryRecord entryRecord) {
-        jdbcClient.sql("INSERT INTO Entries (studentId, name, branch, entryTime, exitTime, booksBorrowed) VALUES (?,?,?,?,?,?) ")
+        var updated = jdbcClient.sql("INSERT INTO Entries (studentId, name, branch, entryTime, exitTime, booksBorrowed) VALUES (?,?,?,?,?,?) ")
                 .params(entryRecord.studentId(), entryRecord.name(), entryRecord.branch().toString(), entryRecord.entryTime(), entryRecord.exitTime(), entryRecord.booksBorrowed())
                 .update();
+
+        Assert.state(updated == 0, "Creation unsuccessful!");
     }
 
     // update
     public void update(Integer studentId, EntryRecord entryRecord) {
-        jdbcClient.sql("UPDATE Entries SET name=?, branch=?, entryTime=?, exitTime=?, booksBorrowed=? where studentId=?")
+        var updated = jdbcClient.sql("UPDATE Entries SET name=?, branch=?, entryTime=?, exitTime=?, booksBorrowed=? where studentId=?")
                 .params(entryRecord.name(), entryRecord.branch().toString(), entryRecord.entryTime(), entryRecord.exitTime(), entryRecord.booksBorrowed(), studentId)
                 .update();
+
+        Assert.state(updated == 0, "Update unsuccessful!");
     }
 
     // delete
     public void deleteById(Integer studentId) {
-        jdbcClient.sql("DELETE FROM Entries WHERE studentId=?")
+        var updated = jdbcClient.sql("DELETE FROM Entries WHERE studentId=?")
                 .params(studentId)
                 .update();
+        Assert.state(updated == 0, "Delete unsuccessful!");
     }
 
     // save

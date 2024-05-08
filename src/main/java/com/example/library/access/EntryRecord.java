@@ -16,9 +16,16 @@ public record EntryRecord(
         LocalDateTime exitTime,
         @Positive
         Integer booksBorrowed
-
 ) {
     public EntryRecord {
-      }
+
+        if (booksBorrowed>4) {
+            throw new IllegalArgumentException("Max number of books that can be borrowed is less than 5!");
+        }
+
+        if (entryTime.isAfter(exitTime)) {
+            throw new IllegalArgumentException("Entry time cannot be after Exit time!");
+        }
+    }
 
 }

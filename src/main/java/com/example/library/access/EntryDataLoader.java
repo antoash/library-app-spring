@@ -34,13 +34,9 @@ public class EntryDataLoader implements CommandLineRunner {
                 entryRecord = objectMapper.readValue(file, new TypeReference<List<EntryRecord>>(){});
                 log.info("Reading {} patrons from JSON and saving to the database", entryRecord.size());
                 entryRepository.saveAll(entryRecord);
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
-
-
     }
 }
