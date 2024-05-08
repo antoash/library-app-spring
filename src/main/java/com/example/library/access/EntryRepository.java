@@ -59,4 +59,9 @@ public class EntryRepository {
         entryRecord.forEach(this::create);
     }
 
+    // count
+    public int getCount() {
+        return (jdbcClient.sql("select * from Entries").query(EntryRecord.class).list().size());
+    }
+
 }

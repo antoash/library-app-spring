@@ -9,9 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.LogManager;
 
 @Component
 public class EntryDataLoader implements CommandLineRunner {
@@ -30,15 +28,18 @@ public class EntryDataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        try {
-            File file = new File("C:\\Users\\asher\\Desktop\\Spring Learning\\Library\\demo\\src\\main\\resources\\Data\\patrons.json");
-            entryRecord = objectMapper.readValue(file, new TypeReference<List<EntryRecord>>(){});
-            log.info("Reading {} patrons from JSON and saving to the database", entryRecord.size());
-            entryRepository.saveAll(entryRecord);
+        if (entryRepository.getCount()<1) {
+            try {
+                File file = new File("C:\\Users\\asher\\Desktop\\Spring Learning\\Library\\demo\\src\\main\\resources\\Data\\patrons.json");
+                entryRecord = objectMapper.readValue(file, new TypeReference<List<EntryRecord>>(){});
+                log.info("Reading {} patrons from JSON and saving to the database", entryRecord.size());
+                entryRepository.saveAll(entryRecord);
 
-        } catch (IOException e) {
-            e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
 
 
     }

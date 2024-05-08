@@ -46,4 +46,11 @@ public class EntryController {
         entryRepository.deleteById(studentId);
     }
 
+    // Count
+    @GetMapping("/count")
+    int getCount() {
+        return entryRepository.getCount();
+
+    }
+
 }
